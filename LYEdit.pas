@@ -122,7 +122,7 @@ begin
     UniConnection1.ConnectDialog:=UniConnectDialog1;
     UniConnection1.Connect;
     if UniConnection1.Connected then
-      Text:='ProviderName:'+UniConnection1.ProviderName+';Server:'+UniConnection1.Server+';Port:'+IntToStr(UniConnection1.Port)+';Username:'+UniConnection1.Username+';Password:'+UniConnection1.Password+';Database:'+UniConnection1.Database;
+      Text:='ProviderName='+UniConnection1.ProviderName+';Server='+UniConnection1.Server+';Port='+IntToStr(UniConnection1.Port)+';Username='+UniConnection1.Username+';Password='+UniConnection1.Password+';Database='+UniConnection1.Database;
     UniConnection1.Close;
     UniConnectDialog1.Free;
     UniConnection1.Free;
