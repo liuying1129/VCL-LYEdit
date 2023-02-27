@@ -118,6 +118,11 @@ begin
   if fEditType=etUniConn then//UniDAC数据库连接字符串
   begin
     UniConnection1:=TUniConnection.Create(self);
+    //ProviderName为Oracle,Direct默认值是False
+    //故必须初始化ProviderName为Oracle及设置Direct为True
+    //Bug:如果再来一种Direct默认值为False的数据库,要如何设置呢?
+    UniConnection1.ProviderName:='Oracle';
+    UniConnection1.SpecificOptions.Values['Direct']:='True';
     UniConnectDialog1:=TUniConnectDialog.Create(self);
     UniConnection1.ConnectDialog:=UniConnectDialog1;
     UniConnection1.Connect;
