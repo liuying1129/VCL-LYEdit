@@ -125,6 +125,9 @@ begin
     UniConnection1.SpecificOptions.Values['Direct']:='True';
     UniConnectDialog1:=TUniConnectDialog.Create(self);
     UniConnection1.ConnectDialog:=UniConnectDialog1;
+    //Provider Name为Oracle时,Server属性格式:Host IP:Port:SID,如10.195.252.13:1521:kthis1
+    //Oracle的默认Port为1521
+    //查询Oracle SID:select instance_name from V$instance;
     UniConnection1.Connect;
     if UniConnection1.Connected then
       Text:=UniConnection1.ConnectString+';Login Prompt=False';
